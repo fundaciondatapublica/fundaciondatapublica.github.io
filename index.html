@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación DataPública | Soberanía, Justicia y Bienes Comunes</title>
-    <!-- Tailwind CSS para diseño moderno -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter para datos, Merriweather para autoridad institucional -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter (Moderna/Tech) y Merriweather (Elegante/Citas) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        /* La fuente base para TODO el sitio es Inter (sin serifa, moderna) */
         body { font-family: 'Inter', sans-serif; background-color: #fdfcfb; }
-        h1, h2, h3, .serif { font-family: 'Merriweather', serif; }
+        
+        /* Solo el título principal y las citas usan Merriweather (con serifa) para dar autoridad */
+        h1, .serif { font-family: 'Merriweather', serif; }
+        
         .brutalist-border { border: 3px solid #000; }
         .brutalist-card { border: 3px solid #000; box-shadow: 8px 8px 0px #000; transition: all 0.2s ease; background-color: #fff; }
         .brutalist-card:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0px #000; }
@@ -27,34 +31,35 @@
                 <div class="w-8 h-8 bg-black flex-shrink-0"></div>
                 <span class="text-xl font-bold tracking-tighter uppercase">Fundación DataPública</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
-                <a href="#vision" class="hover:underline decoration-2">Visión</a>
-                <a href="#servicios" class="hover:underline decoration-2">Iniciativas</a>
-                <a href="#marco-etico" class="hover:underline decoration-2">Marco Ético</a>
-                <a href="#liderazgo" class="hover:underline decoration-2">Liderazgo</a>
-                <a href="https://fundaciondatapublica.substack.com" target="_blank" class="bg-black text-white px-4 py-2 hover:bg-neutral-800 transition">Briefing</a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-neutral-600">
+                <a href="#vision" class="hover:text-black hover:underline decoration-2">Visión</a>
+                <a href="#servicios" class="hover:text-black hover:underline decoration-2">Iniciativas</a>
+                <a href="#marco-etico" class="hover:text-black hover:underline decoration-2">Marco Ético</a>
+                <a href="#liderazgo" class="hover:text-black hover:underline decoration-2">Liderazgo</a>
+                <a href="https://substack.com/@fundaciondatapublica" target="_blank" class="bg-black text-white px-4 py-2 hover:bg-orange-600 transition">Briefing</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="container mx-auto px-6 py-24 md:py-32">
+    <header class="container mx-auto px-6 py-20 md:py-32">
         <div class="max-w-4xl">
-            <div class="inline-block bg-yellow-300 text-black px-3 py-1 text-xs font-bold uppercase mb-6 brutalist-border">
+            <!-- Etiqueta Naranjo -->
+            <div class="inline-block bg-orange-500 text-white px-3 py-1 text-xs font-bold uppercase mb-6 brutalist-border">
                 Institucionalidad Digital 2026
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] mb-10">
+            <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
                 Infraestructura Soberana para la Justicia de Datos.
             </h1>
-            <p class="text-xl md:text-2xl text-neutral-600 mb-12 leading-relaxed max-w-3xl serif italic">
-                Existir digitalmente como un nodo seguro de comunicación, un repositorio de confianza y una entidad técnicamente inatacable.
+            <p class="text-xl md:text-2xl text-neutral-600 mb-10 leading-relaxed max-w-3xl serif italic">
+                "La existencia de una organización moderna va más allá de lo legal: necesita una infraestructura digital propia y segura para poder influir y proteger."
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="#servicios" class="bg-black text-white px-10 py-5 font-bold uppercase text-sm brutalist-card text-center">
-                    Explorar Iniciativas y Servicios
+                <a href="#servicios" class="bg-black text-white px-10 py-5 font-bold uppercase text-sm brutalist-card text-center transition">
+                    Ver Iniciativas y Servicios
                 </a>
-                <a href="https://fundaciondatapublica.substack.com" class="bg-white text-black border-2 border-black px-10 py-5 font-bold uppercase text-sm hover:bg-neutral-100 text-center">
-                    Suscribirse al Substack
+                <a href="https://fundaciondatapublica.substack.com" target="_blank" class="bg-white text-black border-2 border-black px-10 py-5 font-bold uppercase text-sm hover:bg-neutral-100 text-center transition">
+                    Suscribirse al Briefing
                 </a>
             </div>
         </div>
@@ -65,28 +70,28 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-20 items-start">
                 <div>
-                    <h2 class="text-4xl font-bold mb-8 uppercase tracking-tighter">El Acto Fundacional</h2>
+                    <h2 class="text-4xl font-extrabold mb-8 uppercase tracking-tighter">El Acto Fundacional</h2>
                     <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
-                        En Chile, la "existencia" de una institución moderna es un fenómeno híbrido. La personalidad jurídica otorga la capacidad de actuar, pero es la <strong>infraestructura digital soberana</strong> la que confiere la capacidad de operar y resistir.
+                        En el contexto del Chile de 2026, abrir una ONG no es solo hacer un trámite. Es asumir la responsabilidad de proteger la información de las personas. 
                     </p>
-                    <p class="text-lg text-neutral-700 leading-relaxed serif italic">
-                        "No estamos simplemente abriendo una ONG; estamos desplegando una infraestructura crítica para el análisis de datos y la incidencia pública."
+                    <p class="text-lg text-neutral-700 leading-relaxed font-semibold">
+                        Actuamos como un puente entre la tecnología, el Estado y la ciudadanía. No somos una consultora tradicional; construimos las bases técnicas para que las decisiones públicas basadas en datos sean transparentes y justas.
                     </p>
                 </div>
                 <div class="space-y-8 bg-stone-50 p-10 brutalist-border">
-                    <h3 class="font-bold uppercase tracking-widest text-sm border-b-2 border-black pb-2 inline-block mb-4">Pilares Estratégicos</h3>
+                    <h3 class="font-bold uppercase tracking-widest text-sm border-b-2 border-black pb-2 inline-block mb-4">Nuestros 3 Pilares</h3>
                     <div class="grid gap-6">
                         <div>
-                            <h4 class="font-bold text-lg mb-1">01. Soberanía Tecnológica</h4>
-                            <p class="text-sm text-neutral-500">Autonomía sobre nuestros servidores, procesos y propiedad intelectual.</p>
+                            <h4 class="font-extrabold text-lg mb-1">01. Soberanía Tecnológica</h4>
+                            <p class="text-sm text-neutral-600">Control total sobre nuestros servidores y herramientas para no depender de corporaciones extranjeras.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">02. Justicia de Datos</h4>
-                            <p class="text-sm text-neutral-500">Transición de la privacidad individual hacia la protección de derechos colectivos.</p>
+                            <h4 class="font-extrabold text-lg mb-1">02. Justicia de Datos</h4>
+                            <p class="text-sm text-neutral-600">Pasar de solo proteger la "privacidad individual" a defender los derechos de comunidades enteras frente a los algoritmos.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">03. Bienes Comunes</h4>
-                            <p class="text-sm text-neutral-500">Gestión de la información como un recurso no rival de interés público.</p>
+                            <h4 class="font-extrabold text-lg mb-1">03. Bienes Comunes</h4>
+                            <p class="text-sm text-neutral-600">Entender la información pública como un recurso compartido que pertenece a los ciudadanos, no al mercado.</p>
                         </div>
                     </div>
                 </div>
@@ -97,33 +102,33 @@
     <!-- Iniciativas y Servicios -->
     <section id="servicios" class="py-24 container mx-auto px-6">
         <div class="mb-16">
-            <h2 class="text-4xl font-bold uppercase mb-4">Iniciativas y Servicios</h2>
-            <p class="text-neutral-500 font-bold uppercase tracking-widest text-sm">Matriz de Incidencia y Valor Público</p>
+            <h2 class="text-4xl font-extrabold uppercase mb-4 tracking-tighter">Iniciativas y Servicios</h2>
+            <p class="text-neutral-500 font-bold uppercase tracking-widest text-sm">Nuestras Líneas de Acción</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Servicio 1 -->
             <div class="p-8 brutalist-card">
-                <h3 class="text-lg font-bold mb-4 uppercase leading-tight">Auditoría QA de Datos</h3>
-                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Validación técnica de precisión, integridad y detección de sesgos en índices públicos y bases de datos estatales.</p>
-                <div class="text-[10px] font-bold py-1 px-2 bg-blue-50 text-blue-800 inline-block uppercase">Rigor Técnico</div>
+                <h3 class="text-xl font-extrabold mb-4 uppercase leading-tight">Auditoría de Datos</h3>
+                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Revisión técnica de bases de datos del Estado para asegurar que sean precisas, seguras y libres de sesgos discriminatorios.</p>
+                <div class="text-[10px] font-bold py-1 px-2 bg-blue-50 text-blue-800 border border-blue-200 inline-block uppercase">Rigor Analítico</div>
             </div>
             <!-- Servicio 2 -->
             <div class="p-8 brutalist-card">
-                <h3 class="text-lg font-bold mb-4 uppercase leading-tight">Índice ITAE</h3>
-                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Índice de Transparencia y Apertura Efectiva. Evaluamos el retorno social real de la información publicada.</p>
-                <div class="text-[10px] font-bold py-1 px-2 bg-green-50 text-green-800 inline-block uppercase">Incidencia</div>
+                <h3 class="text-xl font-extrabold mb-4 uppercase leading-tight">Índice ITAE</h3>
+                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Evaluamos la Transparencia Efectiva: no medimos cuántos excels publica un municipio, sino el impacto social real de esa información.</p>
+                <div class="text-[10px] font-bold py-1 px-2 bg-green-50 text-green-800 border border-green-200 inline-block uppercase">Incidencia</div>
             </div>
             <!-- Servicio 3 -->
             <div class="p-8 brutalist-card">
-                <h3 class="text-lg font-bold mb-4 uppercase leading-tight">Gobernanza Soberana</h3>
-                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Consultoría para la implementación de la Ley de Protección de Datos (2026) bajo principios de autonomía.</p>
-                <div class="text-[10px] font-bold py-1 px-2 bg-purple-50 text-purple-800 inline-block uppercase">Compliance</div>
+                <h3 class="text-xl font-extrabold mb-4 uppercase leading-tight">Gobernanza Digital</h3>
+                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Asesoría para instituciones públicas que necesitan cumplir con la nueva Ley de Protección de Datos de forma ética y autónoma.</p>
+                <div class="text-[10px] font-bold py-1 px-2 bg-purple-50 text-purple-800 border border-purple-200 inline-block uppercase">Consultoría</div>
             </div>
             <!-- Servicio 4 -->
             <div class="p-8 brutalist-card">
-                <h3 class="text-lg font-bold mb-4 uppercase leading-tight">Escuela de Ciudadanía</h3>
-                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Capacitación en alfabetización crítica de datos y Python para el empoderamiento social y periodístico.</p>
-                <div class="text-[10px] font-bold py-1 px-2 bg-orange-50 text-orange-800 inline-block uppercase">Formación</div>
+                <h3 class="text-xl font-extrabold mb-4 uppercase leading-tight">Escuela de Ciudadanía</h3>
+                <p class="text-sm text-neutral-600 mb-6 leading-relaxed">Capacitación práctica en análisis de datos para empoderar a periodistas, dirigentes sociales y funcionarios municipales.</p>
+                <div class="text-[10px] font-bold py-1 px-2 bg-orange-50 text-orange-800 border border-orange-200 inline-block uppercase">Formación</div>
             </div>
         </div>
     </section>
@@ -134,28 +139,28 @@
             <div class="grid lg:grid-cols-3 gap-16">
                 <!-- Principios TRUST -->
                 <div class="lg:col-span-1">
-                    <h2 class="text-4xl font-bold mb-8 uppercase tracking-tighter">Principios TRUST</h2>
-                    <p class="text-neutral-500 mb-10 text-sm italic">Estándar de integridad para repositorios de datos cívicos.</p>
+                    <h2 class="text-4xl font-extrabold mb-8 uppercase tracking-tighter">Principios TRUST</h2>
+                    <p class="text-neutral-400 mb-10 text-sm">El estándar internacional de confianza para quienes custodian información cívica.</p>
                     <div class="space-y-8">
-                        <div class="trust-line">
-                            <h4 class="font-bold text-sm">TRANSPARENCY</h4>
-                            <p class="text-xs text-neutral-500 mt-1">Metodologías verificables por la ciudadanía.</p>
+                        <div class="trust-line border-blue-500">
+                            <h4 class="font-bold text-sm tracking-widest">TRANSPARENCIA</h4>
+                            <p class="text-xs text-neutral-400 mt-1">Nuestras metodologías están abiertas a la verificación de cualquier ciudadano.</p>
                         </div>
-                        <div class="trust-line">
-                            <h4 class="font-bold text-sm">RESPONSIBILITY</h4>
-                            <p class="text-xs text-neutral-500 mt-1">Rendición de cuentas sobre los impactos generados.</p>
+                        <div class="trust-line border-green-500">
+                            <h4 class="font-bold text-sm tracking-widest">RESPONSABILIDAD</h4>
+                            <p class="text-xs text-neutral-400 mt-1">Asumimos las consecuencias del uso y análisis de la información que publicamos.</p>
                         </div>
-                        <div class="trust-line">
-                            <h4 class="font-bold text-sm">USER FOCUS</h4>
-                            <p class="text-xs text-neutral-500 mt-1">Garantía de derechos sobre las comunidades.</p>
+                        <div class="trust-line border-yellow-500">
+                            <h4 class="font-bold text-sm tracking-widest">ENFOQUE EN EL USUARIO</h4>
+                            <p class="text-xs text-neutral-400 mt-1">Los derechos de las comunidades están por encima de la innovación tecnológica.</p>
                         </div>
-                        <div class="trust-line">
-                            <h4 class="font-bold text-sm">SUSTAINABILITY</h4>
-                            <p class="text-xs text-neutral-500 mt-1">Preservación a largo plazo del patrimonio digital.</p>
+                        <div class="trust-line border-red-500">
+                            <h4 class="font-bold text-sm tracking-widest">SOSTENIBILIDAD</h4>
+                            <p class="text-xs text-neutral-400 mt-1">Aseguramos que el conocimiento digital perdure y no se pierda en el tiempo.</p>
                         </div>
-                        <div class="trust-line">
-                            <h4 class="font-bold text-sm">TECHNOLOGY</h4>
-                            <p class="text-xs text-neutral-500 mt-1">Trazabilidad y seguridad informática de alto nivel.</p>
+                        <div class="trust-line border-stone-500">
+                            <h4 class="font-bold text-sm tracking-widest">TECNOLOGÍA SÓLIDA</h4>
+                            <p class="text-xs text-neutral-400 mt-1">Aplicamos trazabilidad y altos estándares de seguridad informática.</p>
                         </div>
                     </div>
                 </div>
@@ -163,21 +168,21 @@
                 <!-- CARE & FAIR -->
                 <div class="lg:col-span-2 space-y-12">
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-10 border-2 border-neutral-700 bg-neutral-800">
-                            <h4 class="text-2xl font-bold mb-4 italic serif">Principios FAIR</h4>
-                            <p class="text-neutral-400 text-sm leading-relaxed">
-                                <strong>Findable, Accessible, Interoperable, Reusable.</strong> Garantizamos la calidad técnica para la innovación científica.
+                        <div class="p-10 border-2 border-neutral-700 bg-neutral-800 brutalist-border">
+                            <h4 class="text-2xl font-extrabold mb-4 uppercase tracking-tighter">Estándar FAIR</h4>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                <strong>Findable, Accessible, Interoperable, Reusable.</strong> <br><br>Garantizamos que los datos que procesamos sean técnicamente útiles y fáciles de encontrar para investigadores y la sociedad.
                             </p>
                         </div>
-                        <div class="p-10 border-2 border-neutral-700 bg-neutral-800">
-                            <h4 class="text-2xl font-bold mb-4 italic serif">Principios CARE</h4>
-                            <p class="text-neutral-400 text-sm leading-relaxed">
-                                <strong>Collective Benefit, Authority, Responsibility, Ethics.</strong> Aseguramos la soberanía comunitaria sobre los datos.
+                        <div class="p-10 border-2 border-neutral-700 bg-neutral-800 brutalist-border">
+                            <h4 class="text-2xl font-extrabold mb-4 uppercase tracking-tighter">Estándar CARE</h4>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                <strong>Collective Benefit, Authority, Responsibility, Ethics.</strong> <br><br>Aseguramos que la gestión de datos respete los valores éticos territoriales y devuelva valor a la comunidad.
                             </p>
                         </div>
                     </div>
-                    <div class="p-12 brutalist-border border-neutral-600 text-center">
-                        <p class="text-xs font-bold uppercase tracking-[0.4em] text-neutral-400">Compromiso con la Soberanía Tecnológica Institucional</p>
+                    <div class="p-8 border-2 border-orange-500 text-center bg-black">
+                        <p class="text-xs font-bold uppercase tracking-[0.3em] text-orange-400">Compromiso con la Soberanía Tecnológica Institucional</p>
                     </div>
                 </div>
             </div>
@@ -189,25 +194,25 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="flex flex-col md:flex-row gap-16 items-start">
                 <div class="w-64 h-64 bg-stone-100 border-4 border-black flex-shrink-0 grayscale">
-                    <!-- Espacio para foto -->
+                    <!-- Espacio para tu foto profesional -->
                     <div class="w-full h-full flex items-center justify-center text-stone-400 font-bold text-[10px] uppercase text-center p-4">
-                        [Juan José Berger Luis]
+                        [Foto: Juan José Berger Luis]
                     </div>
                 </div>
                 <div>
-                    <h2 class="text-4xl font-bold mb-2">Juan José Berger Luis</h2>
-                    <p class="text-sm font-bold text-neutral-400 uppercase tracking-[0.3em] mb-8">Director Ejecutivo</p>
+                    <h2 class="text-4xl font-extrabold mb-2 tracking-tighter">Juan José Berger Luis</h2>
+                    <p class="text-sm font-bold text-orange-500 uppercase tracking-[0.2em] mb-8">Director Ejecutivo</p>
                     <div class="text-neutral-700 space-y-4 leading-relaxed">
                         <p>
-                            Sociólogo (UAH), Magíster en Comunicación (U. de Chile) y Especialista en Ciencia de Datos con Python (UC). Con más de 10 años de trayectoria liderando proyectos de innovación digital en el sector público.
+                            Sociólogo (UAH), Magíster en Comunicación (U. de Chile) y Especialista en Ciencia de Datos con Python (UC). Con más de una década de trayectoria liderando proyectos de innovación digital en el sector público.
                         </p>
                         <p>
-                            Su trayectoria en el <strong>Ministerio del Interior</strong> y como Auditor Externo en el <strong>Centro de Sistemas Públicos (U. de Chile)</strong> fundamenta la capacidad técnica de la fundación para la auditoría de datos y la planificación estratégica centrada en el usuario.
+                            Su experiencia en el <strong>Ministerio del Interior</strong> y como Auditor Externo en el <strong>Centro de Sistemas Públicos (U. de Chile)</strong> fundamenta la capacidad técnica de la fundación para auditar la información pública, asegurar su calidad y diseñar políticas públicas basadas en evidencia.
                         </p>
                     </div>
                     <div class="mt-10 flex space-x-8 text-xs font-bold uppercase tracking-widest">
-                        <a href="https://linkedin.com/in/jjbergerluis" class="border-b-2 border-black hover:text-blue-700 transition">LinkedIn &rarr;</a>
-                        <a href="mailto:jjbergerl@gmail.com" class="border-b-2 border-black hover:text-blue-700 transition">Contacto &rarr;</a>
+                        <a href="https://linkedin.com/in/jjbergerluis" target="_blank" class="border-b-2 border-black hover:text-orange-500 hover:border-orange-500 transition">LinkedIn &rarr;</a>
+                        <a href="mailto:jjbergerl@gmail.com" class="border-b-2 border-black hover:text-orange-500 hover:border-orange-500 transition">Contacto &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -220,26 +225,28 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
                 <div class="lg:col-span-2">
                     <h5 class="text-2xl font-bold mb-6 tracking-tighter uppercase">Fundación DataPública</h5>
-                    <p class="text-neutral-500 text-sm max-w-sm">
-                        Protegiendo el interés público mediante la construcción de infraestructuras cívicas audaces y soberanas.
+                    <p class="text-neutral-400 text-sm max-w-sm leading-relaxed">
+                        Construyendo bases tecnológicas sólidas e independientes para proteger el interés ciudadano en la era de los algoritmos.
                     </p>
                 </div>
                 <div>
-                    <h6 class="text-[10px] font-bold text-neutral-600 uppercase mb-6 tracking-widest">Conectividad</h6>
-                    <ul class="text-sm space-y-3">
-                        <li><a href="https://fundaciondatapublica.substack.com" class="hover:text-yellow-300">Newsletter</a></li>
-                        <li><a href="https://linkedin.com/in/jjbergerluis" class="hover:text-yellow-300">LinkedIn</a></li>
-                        <li><a href="https://github.com/fundaciondatapublica" class="hover:text-yellow-300">GitHub</a></li>
+                    <h6 class="text-[10px] font-bold text-neutral-500 uppercase mb-6 tracking-widest">Ecosistema</h6>
+                    <ul class="text-sm space-y-3 font-semibold">
+                        <li><a href="https://fundaciondatapublica.substack.com" target="_blank" class="hover:text-orange-400 transition">Briefing (Newsletter)</a></li>
+                        <li><a href="https://substack.com/@fundaciondatapublica" target="_blank" class="hover:text-orange-400 transition">Perfil Substack</a></li>
+                        <li><a href="https://linkedin.com/in/jjbergerluis" target="_blank" class="hover:text-orange-400 transition">LinkedIn</a></li>
+                        <li><a href="https://github.com/fundaciondatapublica" target="_blank" class="hover:text-orange-400 transition">Código Abierto (GitHub)</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h6 class="text-[10px] font-bold text-neutral-600 uppercase mb-6 tracking-widest">Seguridad</h6>
-                    <p class="text-neutral-400 text-sm">fundaciondatapublica@proton.me</p>
-                    <p class="text-[10px] text-neutral-600 mt-4 italic uppercase">Santiago, Chile. 2026.</p>
+                    <h6 class="text-[10px] font-bold text-neutral-500 uppercase mb-6 tracking-widest">Contacto Seguro</h6>
+                    <p class="text-neutral-300 text-sm font-semibold">fundaciondatapublica@proton.me</p>
+                    <p class="text-[10px] text-neutral-600 mt-4 uppercase tracking-widest font-bold">Santiago, Chile. 2026.</p>
                 </div>
             </div>
-            <div class="pt-8 border-t border-neutral-900 flex justify-between items-center text-[10px] uppercase tracking-widest text-neutral-700">
+            <div class="pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-neutral-600 space-y-4 md:space-y-0 font-bold">
                 <p>&copy; 2026 Fundación DataPública</p>
+                <p>Cumplimiento Ley 21.719</p>
                 <p>Infraestructura Soberana</p>
             </div>
         </div>
