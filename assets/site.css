@@ -352,3 +352,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .marca span { white-space: nowrap; }
 .tabla td { white-space: nowrap; }
 @media (max-width: 420px) { .ficha { padding: 16px; } .tabla { font-size: 12px; } .tabla th, .tabla td { padding: 6px 2px; } }
+
+/* Bloque newsletter a dos columnas: título | texto y formulario */
+@media (min-width: 980px) { .boletin-form { padding-top: 34px; } }
+.boletin-form .nota { max-width: 44ch; }
+@media (max-width: 979px) { .boletin-form { margin-top: -32px; } }
