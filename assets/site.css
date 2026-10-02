@@ -360,3 +360,9 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .aviso:empty { display: none; }
 .suscribir[hidden] { display: none; }
 .nota.aviso { font-size: 17px; font-weight: 600; }
+.capa .redes { margin-top: auto; }
+.capa .redes p { font-weight: 700; font-size: 15px; margin-bottom: 10px; }
+.capa .redes ul { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.capa .redes a { display: grid; place-items: center; width: 44px; height: 44px; margin: 0; border: 1px solid currentColor; border-radius: var(--radio); }
+.capa .redes a:hover, .capa .redes a:focus-visible { background: var(--papel); color: var(--violeta); }
+.capa .redes svg { width: 20px; height: 20px; }
