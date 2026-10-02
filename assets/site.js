@@ -31,7 +31,9 @@
             form.hidden = true;
             aviso.textContent = '¡Listo, quedaste inscrito! Te escribiremos a ' + form.email.value + '.';
           } else {
-            aviso.textContent = r.status === 400 ? 'Revisa tu correo: parece que tiene un error.' : 'No pudimos guardar tu correo. Intenta de nuevo en un rato.';
+            return r.text().then(function (t) {
+              aviso.textContent = r.status === 400 && t ? t : 'No pudimos guardar tu correo. Intenta de nuevo en un rato.';
+            });
           }
         })
         .catch(function () { aviso.textContent = 'No pudimos guardar tu correo. Intenta de nuevo en un rato.'; })
