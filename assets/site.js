@@ -53,3 +53,36 @@
     if (menu.open && !menu.contains(e.target)) menu.removeAttribute('open');
   });
 })();
+
+// Atajos para celulares: aparece al bajar, abre el índice y marca la sección actual.
+(function () {
+  var nav = document.querySelector('.atajos');
+  if (!nav) return;
+  var boton = nav.querySelector('.atajos-boton');
+  var panel = nav.querySelector('.atajos-panel');
+  var enlaces = panel.querySelectorAll('ol a');
+
+  function cerrar() { panel.hidden = true; boton.setAttribute('aria-expanded', 'false'); }
+  boton.addEventListener('click', function () {
+    var abrir = panel.hidden;
+    panel.hidden = !abrir;
+    boton.setAttribute('aria-expanded', String(abrir));
+  });
+  panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', cerrar); });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) cerrar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { cerrar(); boton.focus(); } });
+
+  function mostrar() { nav.classList.toggle('visible', window.scrollY > 500); if (window.scrollY <= 500) cerrar(); }
+  window.addEventListener('scroll', mostrar, { passive: true });
+  mostrar();
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        enlaces.forEach(function (a) { a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    enlaces.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) obs.observe(s); });
+  }
+})();

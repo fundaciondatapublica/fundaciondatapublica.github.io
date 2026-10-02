@@ -448,3 +448,37 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .pie .aliados-pie a { display: inline-flex; align-items: center; min-height: 44px; }
 .pie .aliados-pie img { height: 30px; margin: 0; filter: brightness(0) invert(1); opacity: .8; transition: opacity .15s; }
 .pie .aliados-pie a:hover img { opacity: 1; }
+
+/* Atajos para celulares: botón flotante con índice de secciones */
+.atajos { display: none; }
+@media (max-width: 859px) {
+  .atajos {
+    display: block; position: fixed; z-index: 60;
+    right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    opacity: 0; visibility: hidden; transform: translateY(12px);
+    transition: opacity .2s, transform .2s, visibility .2s;
+  }
+  .atajos.visible { opacity: 1; visibility: visible; transform: none; }
+}
+.atajos-boton {
+  width: 56px; height: 56px; border-radius: 50%; border: 0; margin-left: auto;
+  display: grid; place-items: center; cursor: pointer;
+  background: var(--violeta); color: var(--papel);
+  box-shadow: 0 6px 18px rgba(30, 27, 20, 0.28);
+  -webkit-tap-highlight-color: transparent;
+}
+.atajos-boton[aria-expanded="true"] { background: var(--tinta); }
+.atajos-panel {
+  position: absolute; right: 0; bottom: 68px;
+  width: min(260px, calc(100vw - 32px));
+  background: var(--papel); border: 1px solid var(--filete); border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(30, 27, 20, 0.2);
+  padding: 12px 16px 8px;
+}
+.atajos-panel[hidden] { display: none; }
+.atajos-panel p { font-family: var(--mono); font-size: 12px; color: var(--tinta-2); margin-bottom: 4px; }
+.atajos-panel ol { list-style: none; margin: 0; padding: 0; }
+.atajos-panel a { display: flex; align-items: center; min-height: 46px; border-bottom: 1px solid var(--filete); text-decoration: none; color: var(--tinta); font-size: 17px; font-weight: 600; }
+.atajos-panel a[aria-current="true"] { color: var(--violeta); }
+.atajos-panel a[aria-current="true"]::before { content: ""; width: 6px; height: 6px; border-radius: 1px; background: var(--violeta); margin-right: 10px; }
+.atajos-panel .arriba { border-bottom: 0; color: var(--tinta-2); font-size: 15px; }
