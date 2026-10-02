@@ -41,3 +41,15 @@
     });
   });
 })();
+
+// Menú de celular: se cierra al elegir una sección o al tocar fuera.
+(function () {
+  var menu = document.querySelector('details.menu');
+  if (!menu) return;
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { menu.removeAttribute('open'); });
+  });
+  document.addEventListener('click', function (e) {
+    if (menu.open && !menu.contains(e.target)) menu.removeAttribute('open');
+  });
+})();

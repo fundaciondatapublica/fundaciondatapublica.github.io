@@ -80,7 +80,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 /* ---------- Navegación ---------- */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: color-mix(in srgb, var(--papel) 94%, transparent);
+  background: rgba(246, 243, 236, 0.96);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--filete);
 }
@@ -94,7 +95,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--violeta); }
 .nav-links a.btn, .nav-links a.btn:hover { color: var(--papel); }
 .nav-links .solo-desk { display: none; }
-@media (min-width: 860px) { .nav-links .solo-desk { display: inline; } }
+@media (min-width: 860px) { .nav-links .solo-desk { display: inline-flex; } .nav-links .menu { display: none; } }
 
 /* ---------- Botones ---------- */
 .btn {
@@ -116,6 +117,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .suscribir { display: flex; flex-wrap: wrap; gap: 8px; max-width: 520px; }
 .suscribir input[type="email"] {
   flex: 1 1 220px; min-width: 0;
+  -webkit-appearance: none; appearance: none;
   font: 400 17px var(--sans);
   padding: 14px 16px;
   border: 2px solid var(--tinta);
@@ -207,7 +209,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .filtros button {
   font: 600 14px var(--sans);
-  padding: 8px 14px;
+  min-height: 44px; padding: 10px 16px;
+  -webkit-tap-highlight-color: transparent;
   border: 1px solid var(--tinta);
   border-radius: 999px;
   background: transparent; color: var(--tinta);
@@ -408,3 +411,33 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .franja .marco .sub { color: #D6CCEA; }
 .franja .marco dl div { border-bottom-color: rgba(246, 243, 236, 0.22); }
 .franja .marco dt { color: #C4B5FD; }
+
+/* ---------- Celulares: zonas de toque, menú y pantallas angostas ---------- */
+.nav-links a:not(.btn), .marca { min-height: 44px; display: inline-flex; align-items: center; }
+.nav-links .btn-chico { min-height: 44px; }
+.radiografia .ir, .relato .cierre a, .ultimo .ir, .capa a { padding-block: 12px; }
+.menu { position: static; }
+.menu summary {
+  list-style: none; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: 6px;
+  color: var(--tinta-2); -webkit-tap-highlight-color: transparent;
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary::after { content: "▾"; font-size: 12px; }
+.menu[open] summary { color: var(--violeta); }
+.menu[open] summary::after { content: "▴"; }
+.menu-panel {
+  position: absolute; left: 0; right: 0; top: 100%;
+  background: var(--papel); border-bottom: 1px solid var(--filete);
+  box-shadow: 0 12px 24px rgba(30, 27, 20, 0.08);
+  display: grid; padding: 8px var(--gutter) 16px;
+}
+.menu-panel a { min-height: 48px; border-bottom: 1px solid var(--filete); font-size: 17px; }
+.menu-panel a:last-child { border-bottom: 0; }
+.nav .wrap { position: relative; }
+@media (max-width: 399px) {
+  .marca span { display: none; }
+  .nav-links { gap: 14px; }
+}
+[id] { scroll-margin-top: 84px; }
+@media (max-width: 859px) { .nav-links { gap: 16px; } }
+@media (max-width: 859px) { .nav-links a.solo-desk { display: none; } }
