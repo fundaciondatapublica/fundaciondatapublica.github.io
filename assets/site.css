@@ -398,3 +398,13 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .mapa li.vacia .puntos i { background: var(--ambar-fondo); outline: 1px solid #E2C9A4; }
 .mapa li.mejor .reg, .mapa li.mejor .cuenta { color: var(--violeta); font-weight: 700; }
 .mapa-ficha .carril { margin-top: 12px; }
+
+/* Franja violeta para separar los marcos éticos de las secciones vecinas */
+.seccion.franja { background: var(--violeta); color: var(--papel); border-top: 0; }
+.franja .seccion-cab h2 { color: var(--papel); }
+.franja .seccion-cab p, .franja .folio { color: #D6CCEA; }
+.franja .marco { border-top-color: var(--papel); }
+.franja .marco h3 { color: var(--papel); }
+.franja .marco .sub { color: #D6CCEA; }
+.franja .marco dl div { border-bottom-color: rgba(246, 243, 236, 0.22); }
+.franja .marco dt { color: #C4B5FD; }
