@@ -367,11 +367,34 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .capa .redes a:hover, .capa .redes a:focus-visible { background: var(--papel); color: var(--violeta); }
 .capa .redes svg { width: 20px; height: 20px; }
 
-/* Radiografía: cada punto es una comuna, de norte a sur */
-.radiografia .cifra { font-size: 22px; font-weight: 700; color: var(--tinta-2); line-height: 1; margin-bottom: 6px; }
-.radiografia .cifra b { font-size: clamp(64px, 7vw, 88px); font-weight: 900; color: var(--violeta); letter-spacing: -0.03em; }
-.radiografia .desc { font-size: 16px; color: var(--tinta); margin-bottom: 18px; }
-.radiografia .puntos { display: grid; grid-template-columns: repeat(auto-fill, 9px); gap: 3px; }
-.radiografia .puntos i { width: 9px; height: 9px; border-radius: 2px; background: var(--filete); }
-.radiografia .puntos i.si { background: var(--violeta); }
-.radiografia .carril { margin-top: 10px; }
+/* Radiografía de datos.gob.cl */
+.radiografia h3 { margin-bottom: 14px; }
+.cifras { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 18px; margin: 0; }
+.cifras div { border-top: 1px solid var(--tinta); padding-top: 8px; }
+.cifras dt { font-size: 30px; font-weight: 900; color: var(--violeta); line-height: 1.1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.cifras dt small { font-size: 15px; font-weight: 700; color: var(--tinta-2); letter-spacing: 0; }
+.cifras dd { margin: 4px 0 0; font-size: 13px; color: var(--tinta-2); line-height: 1.4; }
+.cifras dd b { color: var(--tinta); }
+.cifras .alerta { border-top-color: var(--ambar); }
+.cifras .alerta dt { color: var(--ambar); }
+.radiografia .ir { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--violeta); text-underline-offset: 4px; }
+
+.radio-grid { display: grid; gap: 40px; }
+@media (min-width: 980px) { .radio-grid { grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; } }
+.relato p { font-size: 18px; margin-bottom: 18px; max-width: 46ch; text-wrap: pretty; }
+.relato .grande { font-size: 22px; }
+.relato .grande b { color: var(--violeta); }
+.relato .cierre { padding-top: 18px; border-top: 1px solid var(--filete); }
+.relato .cierre a { font-weight: 700; color: var(--violeta); text-underline-offset: 4px; }
+.marca-vacia { font-weight: 700; color: var(--ambar); background: var(--ambar-fondo); padding: 0 4px; border-radius: 2px; }
+.marca-mejor { font-weight: 700; color: var(--papel); background: var(--violeta); padding: 0 4px; border-radius: 2px; }
+.mapa { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--tinta); }
+.mapa li { display: grid; grid-template-columns: 92px 1fr 44px; gap: 10px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--filete); font-size: 13px; }
+.mapa .cuenta { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--tinta-2); }
+.mapa .puntos { display: flex; flex-wrap: wrap; gap: 2px; }
+.mapa .puntos i { width: 6px; height: 6px; border-radius: 1px; background: var(--filete); }
+.mapa .puntos i.si { background: var(--violeta); }
+.mapa li.vacia .reg, .mapa li.vacia .cuenta { color: var(--ambar); font-weight: 700; }
+.mapa li.vacia .puntos i { background: var(--ambar-fondo); outline: 1px solid #E2C9A4; }
+.mapa li.mejor .reg, .mapa li.mejor .cuenta { color: var(--violeta); font-weight: 700; }
+.mapa-ficha .carril { margin-top: 12px; }
