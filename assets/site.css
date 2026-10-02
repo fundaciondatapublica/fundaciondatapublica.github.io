@@ -366,3 +366,18 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .capa .redes a { display: grid; place-items: center; width: 44px; height: 44px; margin: 0; border: 1px solid currentColor; border-radius: var(--radio); }
 .capa .redes a:hover, .capa .redes a:focus-visible { background: var(--papel); color: var(--violeta); }
 .capa .redes svg { width: 20px; height: 20px; }
+
+/* Radiografía: cada punto es una comuna, de norte a sur */
+.mapa { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--tinta); }
+.mapa li { display: grid; grid-template-columns: 96px 1fr 40px; gap: 8px; align-items: center; padding: 3px 0; border-bottom: 1px solid var(--filete); font-size: 12px; }
+.mapa .reg { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mapa .cuenta { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--tinta-2); }
+.mapa .puntos { display: flex; flex-wrap: wrap; gap: 2px; }
+.mapa .puntos i { width: 5px; height: 5px; border-radius: 1px; background: var(--filete); }
+.mapa .puntos i.si { background: var(--violeta); }
+.mapa li.vacia .reg, .mapa li.vacia .cuenta { color: var(--ambar); font-weight: 700; }
+.mapa li.vacia .puntos i { background: var(--ambar-fondo); outline: 1px solid #E2C9A4; }
+.cifras { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 16px; margin: 16px 0 0; }
+.cifras div { border-top: 1px solid var(--tinta); padding-top: 6px; }
+.cifras dt { font-size: 22px; font-weight: 800; color: var(--violeta); font-variant-numeric: tabular-nums; }
+.cifras dd { margin: 0; font-size: 12px; color: var(--tinta-2); line-height: 1.35; }

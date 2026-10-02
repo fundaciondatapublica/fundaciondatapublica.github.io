@@ -20,7 +20,7 @@
     <meta name="theme-color" content="#4C1D95">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="fonts/chivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/site.css?v=202610012256">
+    <link rel="stylesheet" href="assets/site.css?v=202610012321">
 </head>
 <body>
     <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -63,25 +63,41 @@
                     <p class="acciones"><a href="#que-hacemos">Ver qué hacemos ↓</a></p>
                 </div>
 
-                <!-- Ejemplo de ficha: muestra cómo se ve una auditoría -->
-                <figure class="ficha" aria-label="Ejemplo de ficha de auditoría con datos ficticios">
-                    <div class="ficha-cab"><span>Informe técnico · N.º 01</span><span>Folio 12</span></div>
-                    <h3>Cobertura del registro</h3>
-                    <p class="desc">El sistema declara cobertura completa. El cruce con el registro de referencia muestra otra cosa.</p>
-                    <table class="tabla">
-                        <caption>Tabla 3.1 · Registros por zona</caption>
-                        <thead><tr><th scope="col">Zona</th><th scope="col">Declarados</th><th scope="col">Verificados</th><th scope="col">Brecha</th></tr></thead>
-                        <tbody>
-                            <tr><td>Norte</td><td>184.220</td><td>183.905</td><td>0,17 %</td></tr>
-                            <tr><td>Centro</td><td>947.318</td><td>946.002</td><td>0,14 %</td></tr>
-                            <tr class="marcada"><td>Sur</td><td>474.902</td><td>411.336</td><td>13,39 %</td></tr>
-                            <tr><td>Austral</td><td>210.447</td><td>209.881</td><td>0,27 %</td></tr>
-                        </tbody>
-                    </table>
-                    <div class="hallazgo"><strong>Hallazgo</strong>La brecha de la zona sur es 49 veces la mediana. El sistema no expone el criterio de exclusión.</div>
-                    <p class="carril">Fuente: registro de referencia · ref_2025Q4 · extr. 30-07-2026<br>Método: cruce por identificador anonimizado</p>
-                    <figcaption class="ficha-pie">Ejemplo ilustrativo con datos ficticios.</figcaption>
+                <!-- Radiografía con datos reales: se regenera con _herramientas/radiografia.py -->
+                <!-- radiografia:inicio -->
+                <figure class="ficha radiografia" aria-labelledby="radiografia-titulo">
+                    <div class="ficha-cab"><span>Radiografía · datos.gob.cl</span><span>Corte 01-10-2026</span></div>
+                    <h3 id="radiografia-titulo">¿Quién publica datos abiertos en Chile?</h3>
+                    <p class="desc">Municipios con datos en el portal nacional, de norte a sur. Cada punto es una comuna.</p>
+                    <ol class="mapa" aria-label="Comunas que publican datos, por región">
+                        <li><span class="reg">Arica</span><span class="puntos" aria-hidden="true"><i class="si"></i><i></i><i></i><i></i></span><span class="cuenta">1/4</span></li>
+                        <li class="vacia"><span class="reg">Tarapacá</span><span class="puntos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">0/7</span></li>
+                        <li class="vacia"><span class="reg">Antofagasta</span><span class="puntos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">0/9</span></li>
+                        <li class="vacia"><span class="reg">Atacama</span><span class="puntos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">0/9</span></li>
+                        <li><span class="reg">Coquimbo</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">2/15</span></li>
+                        <li><span class="reg">Valparaíso</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">2/38</span></li>
+                        <li><span class="reg">Metropolitana</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">11/52</span></li>
+                        <li><span class="reg">O'Higgins</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">2/33</span></li>
+                        <li><span class="reg">Maule</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">5/30</span></li>
+                        <li><span class="reg">Ñuble</span><span class="puntos" aria-hidden="true"><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">1/21</span></li>
+                        <li><span class="reg">Biobío</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">4/33</span></li>
+                        <li><span class="reg">La Araucanía</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">4/32</span></li>
+                        <li><span class="reg">Los Ríos</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">6/12</span></li>
+                        <li><span class="reg">Los Lagos</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">7/30</span></li>
+                        <li><span class="reg">Aysén</span><span class="puntos" aria-hidden="true"><i class="si"></i><i class="si"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">2/10</span></li>
+                        <li class="vacia"><span class="reg">Magallanes</span><span class="puntos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="cuenta">0/11</span></li>
+                    </ol>
+                    <div class="hallazgo"><strong>Hallazgo</strong>Solo 47 de 346 comunas publican datos en el portal nacional. En Tarapacá, Antofagasta, Atacama y Magallanes, ninguna.</div>
+                    <dl class="cifras">
+                        <div><dt>3.233</dt><dd>conjuntos de datos de 233 instituciones</dd></div>
+                        <div><dt>42 %</dt><dd>de los archivos en formatos abiertos</dd></div>
+                        <div><dt>60 %</dt><dd>consultable por API</dd></div>
+                        <div><dt>51 %</dt><dd>sin actualizar en 5 años</dd></div>
+                    </dl>
+                    <p class="carril">Fuente: API pública de datos.gob.cl · consulta 01-10-2026<br>Método: conjuntos por institución, formato y última modificación</p>
+                    <figcaption class="ficha-pie">Datos reales. No incluye municipios que publican solo en portales propios.</figcaption>
                 </figure>
+                <!-- radiografia:fin -->
             </div>
         </header>
 
@@ -352,6 +368,6 @@
         </div>
     </footer>
 
-    <script src="assets/site.js?v=202610012256"></script>
+    <script src="assets/site.js?v=202610012321"></script>
 </body>
 </html>
