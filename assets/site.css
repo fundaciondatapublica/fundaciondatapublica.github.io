@@ -441,3 +441,13 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 [id] { scroll-margin-top: 84px; }
 @media (max-width: 859px) { .nav-links { gap: 16px; } }
 @media (max-width: 859px) { .nav-links a.solo-desk { display: none; } }
+
+/* Instituciones con las que hemos trabajado */
+.aliados { border-top: 1px solid var(--filete); padding: 40px 0; }
+.aliados .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 48px; }
+.aliados h2 { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--tinta-2); }
+.aliados ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 24px 48px; }
+.aliados a { display: flex; align-items: center; gap: 16px; min-height: 44px; text-decoration: none; color: var(--tinta-2); font-size: 14px; }
+.aliados img { height: 34px; width: auto; }
+.aliados a:hover span { color: var(--violeta); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 599px) { .aliados a { flex-direction: column; align-items: flex-start; gap: 8px; } }
