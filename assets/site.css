@@ -64,7 +64,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 
 :focus-visible { outline: 3px solid var(--violeta-claro); outline-offset: 3px; }
 
-.skip { position: absolute; left: -9999px; }
+.skip, .trampa { position: absolute; left: -9999px; }
 .skip:focus { left: 16px; top: 16px; z-index: 100; background: var(--tinta); color: var(--papel); padding: 8px 12px; }
 
 .wrap { max-width: var(--ancho); margin: 0 auto; padding: 0 var(--gutter); }
@@ -357,3 +357,6 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 @media (min-width: 980px) { .boletin-form { padding-top: 34px; } }
 .boletin-form .nota { max-width: 44ch; }
 @media (max-width: 979px) { .boletin-form { margin-top: -32px; } }
+.aviso:empty { display: none; }
+.suscribir[hidden] { display: none; }
+.nota.aviso { font-size: 17px; font-weight: 600; }

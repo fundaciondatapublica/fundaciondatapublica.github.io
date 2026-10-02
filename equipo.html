@@ -74,11 +74,14 @@
                 </div>
                 <div class="boletin-form">
                     <p>Suscríbete al newsletter y recibe nuestras auditorías, declaraciones y talleres.</p>
-                    <form class="suscribir" action="https://fundaciondatapublica.substack.com/api/v1/free?nojs=true" method="post" target="_blank" rel="noopener">
+                    <form class="suscribir" action="https://datapublica-suscripciones.PENDIENTE.workers.dev/suscribir" method="post">
+                        <input type="hidden" name="pagina" value="equipo">
+                        <input class="trampa" type="text" name="sitio" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <label class="skip" for="email-equipo">Correo electrónico</label>
                         <input id="email-equipo" type="email" name="email" placeholder="tu@correo.cl" autocomplete="email" required>
                         <button class="btn" type="submit">Suscribirme</button>
                     </form>
+                    <p class="nota">Solo usamos tu correo para enviarte el newsletter.</p>
                     <p class="nota">¿Quieres sumarte como especialista? Escríbenos a fundaciondatapublica@proton.me</p>
                 </div>
             </div>
@@ -121,5 +124,6 @@
         </div>
     </footer>
 
+    <script src="assets/site.js"></script>
 </body>
 </html>
