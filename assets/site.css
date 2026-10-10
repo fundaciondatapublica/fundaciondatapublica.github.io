@@ -482,3 +482,14 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .atajos-panel a[aria-current="true"] { color: var(--violeta); }
 .atajos-panel a[aria-current="true"]::before { content: ""; width: 6px; height: 6px; border-radius: 1px; background: var(--violeta); margin-right: 10px; }
 .atajos-panel .arriba { border-bottom: 0; color: var(--tinta-2); font-size: 15px; }
+
+/* Páginas de texto legal */
+.aviso { max-width: 70ch; }
+.aviso-bloque { margin-bottom: 40px; }
+.aviso-bloque h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; color: var(--violeta); margin-bottom: 14px; letter-spacing: -0.015em; }
+.aviso-bloque p { margin-bottom: 14px; }
+.aviso .lista { list-style: none; margin: 0; padding: 0; }
+.aviso .lista li { padding: 12px 0 12px 20px; border-bottom: 1px solid var(--filete); position: relative; }
+.aviso .lista li::before { content: ""; position: absolute; left: 0; top: 20px; width: 6px; height: 6px; border-radius: 1px; background: var(--violeta); }
+.aviso .lista li:last-child { border-bottom: 0; }
+.pie .legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
