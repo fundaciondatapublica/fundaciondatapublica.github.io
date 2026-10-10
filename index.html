@@ -20,7 +20,7 @@
     <meta name="theme-color" content="#4C1D95">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="fonts/chivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/site.css?v=202610092151">
+    <link rel="stylesheet" href="assets/site.css?v=202610092208">
     <script type="application/ld+json">
     [
       {
@@ -130,7 +130,7 @@
                         <input id="email-hero" type="email" name="email" placeholder="tu@correo.cl" autocomplete="email" required>
                         <button class="btn" type="submit">Recibir el newsletter</button>
                     </form>
-                    <p class="nota">Gratis. Solo usamos tu correo para enviarte el newsletter. <span class="mono">Este sitio no usa cookies ni analítica.</span></p>
+                    <p class="nota">Gratis. Solo usamos tu correo para enviarte el newsletter.</p>
                     <p class="acciones"><a href="#que-hacemos">Ver qué hacemos ↓</a></p>
                 </div>
 
@@ -490,6 +490,16 @@
         </button>
     </nav>
 
-    <script src="assets/site.js?v=202610092151"></script>
+
+    <!-- Franja de privacidad: el formato habitual de los avisos de cookies, usado para decir lo contrario. -->
+    <div class="franja-cookies" id="franja-cookies" role="region" aria-label="Aviso de privacidad" hidden>
+        <div class="wrap">
+            <p><b>Por política, este sitio no usa cookies ni analítica.</b> No recogemos ningún dato de
+            tu visita, así que no hay nada que aceptar. <a href="privacidad.html">Ver nuestra política</a></p>
+            <button type="button" id="franja-cerrar">Entendido</button>
+        </div>
+    </div>
+
+    <script src="assets/site.js?v=202610092208"></script>
 </body>
 </html>

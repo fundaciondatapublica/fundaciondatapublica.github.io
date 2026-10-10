@@ -493,3 +493,29 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .aviso .lista li::before { content: ""; position: absolute; left: 0; top: 20px; width: 6px; height: 6px; border-radius: 1px; background: var(--violeta); }
 .aviso .lista li:last-child { border-bottom: 0; }
 .pie .legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Franja de privacidad (el lugar donde otros sitios piden aceptar cookies) */
+.franja-cookies {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  background: var(--tinta); color: var(--papel);
+  border-top: 3px solid var(--violeta-claro);
+  padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0px));
+}
+.franja-cookies[hidden] { display: none; }
+.franja-cookies .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+.franja-cookies p { margin: 0; font-size: 15px; max-width: 78ch; line-height: 1.45; }
+.franja-cookies a { color: var(--papel); text-underline-offset: 3px; }
+.franja-cookies button {
+  flex: 0 0 auto; min-height: 44px; padding: 10px 24px;
+  font: 700 15px var(--sans); cursor: pointer;
+  background: var(--papel); color: var(--tinta);
+  border: 2px solid var(--papel); border-radius: var(--radio);
+  -webkit-tap-highlight-color: transparent;
+}
+.franja-cookies button:hover { background: var(--violeta-claro); border-color: var(--violeta-claro); color: var(--papel); }
+@media (max-width: 859px) {
+  .franja-cookies p { font-size: 14px; }
+  .franja-cookies button { width: 100%; }
+  /* el botón de secciones sube para no quedar tapado */
+  .atajos { bottom: calc(132px + env(safe-area-inset-bottom, 0px)); }
+}

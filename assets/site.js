@@ -86,3 +86,18 @@
     enlaces.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) obs.observe(s); });
   }
 })();
+
+// Franja de privacidad: se muestra una vez por navegador. Usa localStorage,
+// no una cookie, y nada de esto sale del equipo de quien visita.
+(function () {
+  var franja = document.getElementById('franja-cookies');
+  if (!franja) return;
+  var visto;
+  try { visto = localStorage.getItem('fdp-privacidad-vista'); } catch (e) { visto = null; }
+  if (visto) return;
+  franja.hidden = false;
+  document.getElementById('franja-cerrar').addEventListener('click', function () {
+    franja.hidden = true;
+    try { localStorage.setItem('fdp-privacidad-vista', '1'); } catch (e) {}
+  });
+})();
