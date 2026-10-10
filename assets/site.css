@@ -519,3 +519,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
   /* el botón de secciones sube para no quedar tapado */
   .atajos { bottom: calc(132px + env(safe-area-inset-bottom, 0px)); }
 }
+@media (min-width: 860px) { .capas.tres { grid-template-columns: repeat(3, 1fr); } }
+
+/* TRUST, CARE y FAIR centrados sobre su columna */
+.marco h3, .marco .sub { text-align: center; }
+.marco .sub { margin-left: auto; margin-right: auto; max-width: 30ch; }
