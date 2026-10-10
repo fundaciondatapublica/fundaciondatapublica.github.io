@@ -1,0 +1,5 @@
+# Fundación Data Pública · fundaciondatapublica.github.io
+User-agent: *
+Allow: /
+
+Sitemap: https://fundaciondatapublica.github.io/sitemap.xml
