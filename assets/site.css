@@ -334,8 +334,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .grupo-cab h2 { font-size: 26px; font-weight: 800; color: var(--violeta); }
 .grupo-cab span { font-family: var(--mono); font-size: 13px; color: var(--tinta-2); }
 .personas { display: grid; gap: 24px; }
-@media (min-width: 720px) { .personas { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1120px) { .personas { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 820px) { .personas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1240px) { .personas { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .persona { background: #fff; border: 1px solid var(--filete); border-radius: var(--radio); padding: 24px; }
 .persona .retrato {
   aspect-ratio: 4 / 5; background: var(--papel-2); border-radius: var(--radio); margin-bottom: 18px;
@@ -347,25 +347,30 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 .persona .cargo { font-family: var(--mono); font-size: 13px; color: var(--violeta); margin-bottom: 14px; }
 .persona p { font-size: 16px; }
 .persona .enlaces a { font-weight: 700; color: var(--violeta); font-size: 15px; margin-right: 16px; text-underline-offset: 4px; }
-/* Tarjeta que gira: foto al frente; al dorso, la biografía sobre la foto difuminada en blanco.
-   Gira con el cursor, con el teclado (foco) y, en pantallas táctiles, al tocarla (site.js). */
-.giro { position: relative; aspect-ratio: 4 / 5; margin-bottom: 18px; perspective: 1200px; cursor: pointer; border-radius: var(--radio); }
-.giro:focus-visible { outline: 2px solid var(--violeta); outline-offset: 3px; }
+/* Tarjeta que gira: la foto a color ocupa todo el ancho de la tarjeta; al dorso, la misma foto
+   atenuada en blanco con el resumen del CV. Gira con el cursor, el teclado (foco) o al tocarla (site.js). */
+.giro { position: relative; aspect-ratio: 4 / 5; margin: -24px -24px 20px; perspective: 1400px; cursor: pointer; }
+.giro:focus-visible { outline: 2px solid var(--violeta); outline-offset: -6px; }
 .giro-int { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
 .giro:hover .giro-int, .giro:focus-visible .giro-int, .giro.volteada .giro-int { transform: rotateY(180deg); }
-.cara { position: absolute; inset: 0; border-radius: var(--radio); overflow: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.cara { position: absolute; inset: 0; border-radius: var(--radio) var(--radio) 0 0; overflow: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 .frente { background: var(--papel-2); display: grid; place-items: center; }
-.frente img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
-.frente .ini { font-weight: 900; font-size: 56px; color: var(--violeta); opacity: .35; }
-.frente .girar { position: absolute; right: 10px; bottom: 10px; font-family: var(--mono); font-size: 12px; color: var(--violeta); background: rgba(255, 255, 255, .85); padding: 3px 8px; border-radius: var(--radio); }
-.dorso { transform: rotateY(180deg); background: #fff; border: 1px solid var(--filete); display: flex; align-items: center; padding: 18px; }
-.dorso .difusa { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; filter: grayscale(1) blur(10px); opacity: .12; }
-.persona .dorso p { position: relative; margin: 0; max-height: 100%; overflow-y: auto; font-size: 13px; line-height: 1.45; color: var(--tinta); }
+.frente img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.frente .ini { font-weight: 900; font-size: 64px; color: var(--violeta); opacity: .35; }
+.frente .girar { position: absolute; right: 12px; bottom: 12px; font-family: var(--mono); font-size: 12px; color: var(--violeta); background: rgba(255, 255, 255, .9); padding: 4px 9px; border-radius: var(--radio); }
+.dorso { transform: rotateY(180deg); background: #fff; display: flex; flex-direction: column; justify-content: center; padding: 26px; }
+.dorso .difusa { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.dorso::after { content: ""; position: absolute; inset: 0; background: rgba(255, 255, 255, .86); }
+.persona .dorso p { position: relative; z-index: 1; margin: 0; font-size: 14px; line-height: 1.55; color: var(--tinta); }
 @media (prefers-reduced-motion: reduce) {
   .giro-int { transition: none; transform: none !important; }
   .dorso { transform: none; opacity: 0; transition: opacity .2s; }
   .giro:hover .dorso, .giro:focus-visible .dorso, .giro.volteada .dorso { opacity: 1; }
 }
+/* Bajo el nombre: título, correo en una sola línea y LinkedIn */
+.persona .enlaces { line-height: 1.6; }
+.persona .enlaces .correo { display: inline-block; margin-bottom: 6px; white-space: nowrap; font-size: 14px; font-weight: 600; }
+@media (max-width: 400px) { .persona { padding: 20px; } .giro { margin: -20px -20px 18px; } .persona .enlaces .correo { font-size: 13px; } }
 .persona.vacante { background: transparent; border-style: dashed; display: grid; place-items: center; text-align: center; min-height: 220px; color: var(--tinta-2); }
 .persona.vacante p { margin: 0; font-size: 15px; }
 
@@ -543,9 +548,3 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 /* TRUST, CARE y FAIR centrados sobre su columna */
 .marco h3, .marco .sub { text-align: center; }
 .marco .sub { margin-left: auto; margin-right: auto; max-width: 30ch; }
-
-/* Dorso centrado; correo y LinkedIn bajo el nombre. */
-.dorso { flex-direction: column; justify-content: center; gap: 10px; }
-.persona .dorso p { max-height: none; overflow: visible; }
-.persona .enlaces { line-height: 1.6; }
-.persona .enlaces a[href^="mailto:"] { display: inline-block; margin-bottom: 6px; font-family: var(--mono); font-size: 13px; font-weight: 400; }
