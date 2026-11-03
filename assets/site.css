@@ -566,3 +566,17 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
   .canales li > a, .canales li > .pronto { flex: 1; align-content: center; }
 }
 .canales .flecha { font-size: 16px; }
+
+/* Pie · Contacto: cada canal con su ícono; al pasar el cursor, el ícono salta y se pinta de violeta */
+.pie .contacto li { margin-bottom: 12px; }
+.pie .contacto a { display: inline-flex; align-items: center; gap: 12px; }
+.pie .contacto a:hover { text-decoration: none; }
+.pie .contacto a:hover span:last-child, .pie .contacto a:focus-visible span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+.pie .contacto .ico {
+  display: grid; place-items: center; flex: none; width: 38px; height: 38px;
+  border: 1px solid #5A5446; border-radius: var(--radio); color: var(--papel);
+  transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), background .2s, border-color .2s;
+}
+.pie .contacto svg { width: 18px; height: 18px; }
+.pie .contacto a:hover .ico, .pie .contacto a:focus-visible .ico { transform: translateY(-4px) rotate(-8deg); background: var(--violeta-claro); border-color: var(--violeta-claro); }
+@media (prefers-reduced-motion: reduce) { .pie .contacto .ico { transition: background .2s, border-color .2s; } .pie .contacto a:hover .ico, .pie .contacto a:focus-visible .ico { transform: none; } }
