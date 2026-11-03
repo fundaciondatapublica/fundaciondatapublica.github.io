@@ -101,3 +101,11 @@
     try { localStorage.setItem('fdp-privacidad-vista', '1'); } catch (e) {}
   });
 })();
+
+// Tarjetas del equipo: en pantallas táctiles no hay cursor, así que giran al tocarlas.
+(function () {
+  if (!window.matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.giro').forEach(function (g) {
+    g.addEventListener('click', function () { g.classList.toggle('volteada'); });
+  });
+})();
