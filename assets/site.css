@@ -555,3 +555,14 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
 
 /* 05 · Cómo sumarse: la bajada es más larga que las demás; va más chica para que el título mande */
 #sumarse .seccion-cab p { font-size: 15px; line-height: 1.6; max-width: 54ch; }
+
+/* Newsletter: en escritorio, la lista de canales ocupa el mismo alto que la columna del formulario,
+   alineada arriba con el rótulo y abajo con la nota */
+@media (min-width: 980px) {
+  .boletin .wrap { align-items: stretch; }
+  .canales { display: flex; flex-direction: column; margin-top: 4px; }
+  .boletin .wrap > div > :last-child { margin-bottom: 0; }
+  .canales li { flex: 1; display: flex; }
+  .canales li > a, .canales li > .pronto { flex: 1; align-content: center; }
+}
+.canales .flecha { font-size: 16px; }
